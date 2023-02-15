@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.micronaut.test:micronaut-test-rest-assured:3.8.2'
+    implementation 'com.loudsight.test:Test:0.0.1'
+    implementation 'io.micronaut.test:micronaut-test-kotlintest:2.3.7'
+    implementation 'io.micronaut.test:micronaut-test-kotest5:3.8.2'
+    implementation 'io.micronaut.test:micronaut-test-core:3.8.2'
+    implementation 'io.micronaut.test:micronaut-test-bom:3.8.2'
+    testImplementation (
+            "com.codeborne:selenide:6.3.5",
+            "org.junit.jupiter:junit-jupiter:5.8.2")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
